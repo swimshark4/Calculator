@@ -7,17 +7,17 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/txtTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Basic Calculator"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <TextView-->
+<!--        android:id="@+id/txtTitle"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:text="Basic Calculator"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <EditText
         android:id="@+id/txtOperand2"
@@ -32,8 +32,8 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+        app:layout_constraintStart_toStartOf="parent" />
+<!--        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />-->
 
     <EditText
         android:id="@+id/txtOperand1"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtOperand2" />
 
     <LinearLayout
-        android:id="@+id/layoutTop"
+        android:id="@+id/layoutMemory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
@@ -56,6 +56,46 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@id/txtOperand1">
+
+        <Button
+            android:id="@+id/btnMemoryPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="M+" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMemoryMinus"
+            android:layout_weight="1"
+            android:text="M-" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMemoryRecall"
+            android:layout_weight="1"
+            android:text="MR" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnMemoryClear"
+            android:layout_weight="1"
+            android:text="MC" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="470dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/layoutMemory">
 
         <Button
             android:id="@+id/btn1"
@@ -181,11 +221,11 @@
             android:text="0" />
 
         <Button
-            android:id="@+id/btnClear"
+            android:id="@+id/btnPosNeg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="CLR" />
+            android:text="+/-" />
 
         <Button
             android:id="@+id/btnDivision"
@@ -195,13 +235,42 @@
             android:text="/" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnEquals"
-        android:layout_width="150dp"
+    <LinearLayout
+        android:id="@+id/layout5th"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="="
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout4th" />
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/layout4th">
 
+
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CLR" />
+
+        <Button
+            android:id="@+id/btnSqrt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SQRT" />
+
+        <Button
+            android:id="@+id/btnBackspace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Back" />
+
+        <Button
+            android:id="@+id/btnEquals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="=" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
