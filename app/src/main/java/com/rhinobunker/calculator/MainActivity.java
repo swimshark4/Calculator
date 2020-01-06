@@ -13,10 +13,7 @@ import android.widget.Toast;
 
 /*
 Things to Add:
-- a (+/-) butotn to alter the positive/negative value
 - a memory value function with M+ , M- , MR , MC buttons
-- a Squareroot button
-- a backspace button
 - a history calculation function (displays below the calculator
 - formatting the final calculation so it doesn't show '.0' if a whole number
 - a percent button (%)
@@ -38,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnEquals;
     private Button btnPosNeg;
     private Button btnSqrt;
+    private Button btnBackspace;
 
     private Button btn1;
     private Button btn2;
@@ -67,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         btnEquals = (Button) findViewById(R.id.btnEquals);
         btnPosNeg = (Button) findViewById(R.id.btnPosNeg);
         btnSqrt = (Button) findViewById(R.id.btnSqrt);
+        btnBackspace = (Button) findViewById(R.id.btnBackspace);
 
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
@@ -197,6 +196,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btnBackspace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String value = operand1.getText().toString();
+                if (value.length() > 0 && !value.equalsIgnoreCase("0")) {
+                    operand1.setText(value.substring(0, value.length() - 1));
+                } else {
+                    operand1.setText("0");
+                }
+            }
+        });
+
+
 
         // ON-CLICK-LISTENERS FOR THE NUMBER BUTTONS
         btn1.setOnClickListener(new View.OnClickListener() {
