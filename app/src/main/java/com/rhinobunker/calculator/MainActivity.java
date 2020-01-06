@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnClear;
     private Button btnDecimal;
     private Button btnEquals;
+    private Button btnPosNeg;
 
     private Button btn1;
     private Button btn2;
@@ -63,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         btnClear = (Button) findViewById(R.id.btnClear);
         btnDecimal = (Button) findViewById(R.id.btnDecimal);
         btnEquals = (Button) findViewById(R.id.btnEquals);
+        btnPosNeg = (Button) findViewById(R.id.btnPosNeg);
+
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
         btn3 = (Button) findViewById(R.id.btn3);
@@ -166,6 +169,19 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 operand1.setText(Double.toString(theResult));
+            }
+        });
+
+        btnPosNeg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (operand1.getText().toString().equalsIgnoreCase("")) {
+                    operand1.setText("-0");
+                } else {
+                    Double oper1 = Double.parseDouble(operand1.getText().toString());
+                    Double theResult = oper1 * -1;
+                    operand1.setText(Double.toString(theResult));
+                }
             }
         });
 
