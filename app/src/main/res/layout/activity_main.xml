@@ -47,16 +47,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtOperand2" />
 
+    // Layout-1
     <LinearLayout
-        android:id="@+id/layoutMemory"
+        android:id="@+id/layout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="470dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@id/txtOperand1">
+        app:layout_constraintTop_toBottomOf="@id/txtOperand1">
 
+        // M+
         <Button
             android:id="@+id/btnMemoryPlus"
             android:layout_width="wrap_content"
@@ -64,6 +65,7 @@
             android:layout_weight="1"
             android:text="M+" />
 
+        // M-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,6 +73,7 @@
             android:layout_weight="1"
             android:text="M-" />
 
+        // MR
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,6 +81,7 @@
             android:layout_weight="1"
             android:text="MR" />
 
+        // MC
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,146 +91,82 @@
 
     </LinearLayout>
 
+    // Layout-2
     <LinearLayout
-        android:id="@+id/layoutTop"
+        android:id="@+id/layout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_marginBottom="470dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@id/layoutMemory">
+        app:layout_constraintTop_toBottomOf="@+id/layout1">
 
+
+        // % (Percent)
         <Button
-            android:id="@+id/btn1"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="1" />
+            android:text="%" />
 
+        // CE
         <Button
-            android:id="@+id/btn2"
+            android:id="@+id/btnClearAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="2" />
+            android:text="CE" />
 
+        // C
         <Button
-            android:id="@+id/btn3"
+            android:id="@+id/btnClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="3" />
+            android:text="C" />
 
+        // Backspace
         <Button
-            android:id="@+id/btnAddition"
+            android:id="@+id/btnBackspace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="+" />
+            android:text="Back" />
+
     </LinearLayout>
 
+    // Layout-3
     <LinearLayout
-        android:id="@+id/layout2nd"
+        android:id="@+id/layout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/layoutTop">
+        app:layout_constraintTop_toBottomOf="@+id/layout2">
 
+        // 1/x
         <Button
-            android:id="@+id/btn4"
+            android:id="@+id/btn1divX"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="4" />
+            android:text="1/x" />
 
+        // x^2
         <Button
-            android:id="@+id/btn5"
+            android:id="@+id/btnXsqrd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="5" />
+            android:text="x^2" />
 
+        // sqrt
         <Button
-            android:id="@+id/btn6"
+            android:id="@+id/btnSqrt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="6" />
+            android:text="SQRT" />
 
-        <Button
-            android:id="@+id/btnSubtraction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="-" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout3rd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/layout2nd"
-        tools:layout_editor_absoluteX="204dp">
-
-        <Button
-            android:id="@+id/btn7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="7" />
-
-        <Button
-            android:id="@+id/btn8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="8" />
-
-        <Button
-            android:id="@+id/btn9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="9" />
-
-        <Button
-            android:id="@+id/btnMultiplication"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="x" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout4th"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/layout3rd">
-
-        <Button
-            android:id="@+id/btnDecimal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="." />
-
-        <Button
-            android:id="@+id/btn0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="0" />
-
-        <Button
-            android:id="@+id/btnPosNeg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="+/-" />
-
+        // Divide
         <Button
             android:id="@+id/btnDivision"
             android:layout_width="wrap_content"
@@ -235,36 +175,164 @@
             android:text="/" />
     </LinearLayout>
 
+    // Layout-789'x'
     <LinearLayout
-        android:id="@+id/layout5th"
+        android:id="@+id/layout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/layout4th">
+        app:layout_constraintTop_toBottomOf="@+id/layout3"
+        tools:layout_editor_absoluteX="204dp">
 
-
-
+        // 7
         <Button
-            android:id="@+id/btnClear"
+            android:id="@+id/btn7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="CLR" />
+            android:text="7" />
 
+        // 8
         <Button
-            android:id="@+id/btnSqrt"
+            android:id="@+id/btn8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="SQRT" />
+            android:text="8" />
 
+        // 9
         <Button
-            android:id="@+id/btnBackspace"
+            android:id="@+id/btn9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Back" />
+            android:text="9" />
 
+        // X
+        <Button
+            android:id="@+id/btnMultiplication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="x" />
+    </LinearLayout>
+
+    // Layout-456'-'
+    <LinearLayout
+        android:id="@+id/layout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/layout4">
+
+        // 4
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="4" />
+
+        // 5
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5" />
+
+        // 6
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="6" />
+
+        // -
+        <Button
+            android:id="@+id/btnSubtraction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="-" />
+    </LinearLayout>
+
+    // Layout-123'+'
+    <LinearLayout
+        android:id="@+id/layout6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/layout5">
+
+        // 1
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1" />
+
+        // 2
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2" />
+
+        // 3
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3" />
+
+        // Plus
+        <Button
+            android:id="@+id/btnAddition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+" />
+
+    </LinearLayout>
+
+    // +/- 0 . =
+    <LinearLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/layout6">
+
+        // +/-
+        <Button
+            android:id="@+id/btnPosNeg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+/-" />
+
+        // 0
+        <Button
+            android:id="@+id/btn0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="0" />
+
+        // Decimal '.'
+        <Button
+            android:id="@+id/btnDecimal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="." />
+
+        // '='
         <Button
             android:id="@+id/btnEquals"
             android:layout_width="wrap_content"
