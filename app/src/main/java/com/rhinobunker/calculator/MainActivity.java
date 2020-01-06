@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnPosNeg;
     private Button btnSqrt;
     private Button btnBackspace;
+    private Button btnPercent;
 
     private Button btn1;
     private Button btn2;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         btnPosNeg = (Button) findViewById(R.id.btnPosNeg);
         btnSqrt = (Button) findViewById(R.id.btnSqrt);
         btnBackspace = (Button) findViewById(R.id.btnBackspace);
+        btnPercent = (Button) findViewById(R.id.btnPercent);
 
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
@@ -209,6 +211,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnPercent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isValidNumber(operand1.getText().toString())) {
+                    Double oper1 = Double.parseDouble(operand1.getText().toString());
+                    Double theResult = oper1 * .01;
+                    operand1.setText(Double.toString(theResult));
+                } else {
+                    operand1.setText("0");
+                }
+            }
+        });
 
 
         // ON-CLICK-LISTENERS FOR THE NUMBER BUTTONS
