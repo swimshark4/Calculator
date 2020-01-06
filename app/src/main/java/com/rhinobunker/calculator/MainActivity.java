@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnDecimal;
     private Button btnEquals;
     private Button btnPosNeg;
+    private Button btnSqrt;
 
     private Button btn1;
     private Button btn2;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         btnDecimal = (Button) findViewById(R.id.btnDecimal);
         btnEquals = (Button) findViewById(R.id.btnEquals);
         btnPosNeg = (Button) findViewById(R.id.btnPosNeg);
+        btnSqrt = (Button) findViewById(R.id.btnSqrt);
 
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
@@ -175,11 +177,22 @@ public class MainActivity extends AppCompatActivity {
         btnPosNeg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (operand1.getText().toString().equalsIgnoreCase("")) {
-                    operand1.setText("-0");
-                } else {
+                if (isValidNumber(operand1.getText().toString())) {
                     Double oper1 = Double.parseDouble(operand1.getText().toString());
                     Double theResult = oper1 * -1;
+                    operand1.setText(Double.toString(theResult));
+                } else {
+                    operand1.setText("-0");
+                }
+            }
+        });
+
+        btnSqrt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isValidNumber(operand1.getText().toString())) {
+                    Double oper1 = Double.parseDouble(operand1.getText().toString());
+                    Double theResult = Math.sqrt(oper1);
                     operand1.setText(Double.toString(theResult));
                 }
             }
@@ -310,5 +323,13 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("TeStInG !!!", "Result for hasDecimalLast() = " + result);
         return result;
+    }
+
+    public Boolean isValidNumber(String string) {
+        if (string.equalsIgnoreCase("")) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
