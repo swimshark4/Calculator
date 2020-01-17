@@ -16,11 +16,7 @@ Things to Add:
 - a memory value function with M+ , M- , MR , MC buttons
 - a history calculation function (displays below the calculator
 - formatting the final calculation so it doesn't show '.0' if a whole number
-- a percent button (%)
-- a squared function (x^2)
-- fix the button layout
-
-
+- CE functionality
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSqrt;
     private Button btnBackspace;
     private Button btnPercent;
+    private Button btnSquared;
+    private Button btnFraction;
 
     private Button btn1;
     private Button btn2;
@@ -50,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn0;
 
     String operator = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         btnSqrt = (Button) findViewById(R.id.btnSqrt);
         btnBackspace = (Button) findViewById(R.id.btnBackspace);
         btnPercent = (Button) findViewById(R.id.btnPercent);
+        btnSquared = (Button) findViewById(R.id.btnSquared);
+        btnFraction = (Button) findViewById(R.id.btnFraction);
 
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
@@ -79,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
         btn8 = (Button) findViewById(R.id.btn8);
         btn9 = (Button) findViewById(R.id.btn9);
         btn0 = (Button) findViewById(R.id.btn0);
+
+//        Double oper1 = Double.parseDouble(operand1.getText().toString()); 3840 x 1080
+//        Double oper2 = Double.parseDouble(operand2.getText().toString());
 
         // ON-CLICK-LISTENERS
         btnAddition.setOnClickListener(new View.OnClickListener() {
@@ -217,6 +221,32 @@ public class MainActivity extends AppCompatActivity {
                 if (isValidNumber(operand1.getText().toString())) {
                     Double oper1 = Double.parseDouble(operand1.getText().toString());
                     Double theResult = oper1 * .01;
+                    operand1.setText(Double.toString(theResult));
+                } else {
+                    operand1.setText("0");
+                }
+            }
+        });
+
+        btnSquared.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isValidNumber(operand1.getText().toString())) {
+                    Double oper1 = Double.parseDouble(operand1.getText().toString());
+                    Double theResult = oper1 * oper1;
+                    operand1.setText(Double.toString(theResult));
+                } else {
+                    operand1.setText("0");
+                }
+            }
+        });
+
+        btnFraction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isValidNumber(operand1.getText().toString())) {
+                    Double oper1 = Double.parseDouble(operand1.getText().toString());
+                    Double theResult = 1 / oper1;
                     operand1.setText(Double.toString(theResult));
                 } else {
                     operand1.setText("0");

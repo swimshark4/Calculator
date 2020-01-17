@@ -7,44 +7,34 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-<!--    <TextView-->
-<!--        android:id="@+id/txtTitle"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        android:text="Basic Calculator"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <EditText
+        android:id="@+id/txtMemory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:inputType="number|numberDecimal"
+        android:text="3"
+        android:textAlignment="textEnd"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtOperand2"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="600dp"
-        android:ems="10"
-        android:inputType="text"
-        android:text="5"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:inputType="number|numberDecimal"
+        android:text="2"
         android:textAlignment="textEnd"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-<!--        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />-->
+        app:layout_constraintTop_toBottomOf="@+id/txtMemory" />
 
     <EditText
         android:id="@+id/txtOperand1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:text="1"
         android:inputType="number|numberDecimal"
         android:textAlignment="textEnd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtOperand2" />
 
     // Layout-1
@@ -102,7 +92,7 @@
 
         // % (Percent)
         <Button
-
+            android:id="@+id/btnPercent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -144,7 +134,7 @@
 
         // 1/x
         <Button
-            android:id="@+id/btn1divX"
+            android:id="@+id/btnFraction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -152,7 +142,7 @@
 
         // x^2
         <Button
-            android:id="@+id/btnXsqrd"
+            android:id="@+id/btnSquared"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
